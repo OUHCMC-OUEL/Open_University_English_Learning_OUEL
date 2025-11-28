@@ -1,4 +1,3 @@
-import QuestionIcon from './Components/Icon';
 import Input from './Components/DataEntry';
 import { Flex } from 'antd'
 import { Details, Output } from './Components/DataDisplay'
