@@ -73,9 +73,9 @@ WSGI_APPLICATION = 'OUEL_Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ouel_database',
-        'HOST': 'localhost',
-        'USER': 'root',
+        'NAME': 'JuniorT$ouel',
+        'HOST': 'JuniorT.mysql.pythonanywhere-services.com',
+        'USER': 'JuniorT',
         'PASSWORD': os.getenv('DATABASE_PASSWORD')
     }
 }
