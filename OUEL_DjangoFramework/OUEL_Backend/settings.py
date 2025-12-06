@@ -1,30 +1,28 @@
 from pathlib import Path
 
-#Env library
+# Env library
 from dotenv import load_dotenv
-import os
+import os, pymysql
 load_dotenv()
 
-#Mysql library
-import pymysql
+# Mysql library
 pymysql.install_as_MySQLdb()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production secret!
+#  SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# Google Gemini API key
-# Document for AI Chatbot: https://medium.com/@oviyan007/how-to-build-an-ai-chatbot-in-django-using-google-gemini-api-beginner-friendly-56598066166c
+#  Google Gemini API key
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
+#  SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-#Swagger guide: https://www.geeksforgeeks.org/python/swagger-integration-with-python-django/
+# Swagger guide: https://www.geeksforgeeks.org/python/swagger-integration-with-python-django/
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -71,7 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'OUEL_Backend.wsgi.application'
 
-#https://medium.com/@lebe_93/using-pymysql-to-connect-to-a-django-project-to-a-mysql-database-77bd5dade213
+# https://medium.com/@lebe_93/using-pymysql-to-connect-to-a-django-project-to-a-mysql-database-77bd5dade213
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -100,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-#Update TIME_ZONE to VietNam UTC
+# Update TIME_ZONE to VietNam UTC
 TIME_ZONE = 'Asia/Ho_Chi_Minh'
 
 USE_I18N = True
@@ -109,7 +107,7 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#CKEditor
+# CKEditor
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '%s/GeminiAPI/static/' % BASE_DIR
@@ -209,5 +207,5 @@ CKEDITOR_5_CONFIGS = {
 }
 }
 
-# Define a constant in settings.py to specify file upload permissions
-CKEDITOR_5_FILE_UPLOAD_PERMISSION = "authenticated"  # Possible values: "staff", "authenticated", "any"
+#  Define a constant in settings.py to specify file upload permissions
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "authenticated"  #  Possible values: "staff", "authenticated", "any"

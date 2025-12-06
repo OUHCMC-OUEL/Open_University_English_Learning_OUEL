@@ -1,8 +1,9 @@
-#This is a guide from GeminiAI and I have already validated the code below
+# This is a guide from GeminiAI and I have already validated the code below
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .GenerateContent import GeminiGenerateContent
 from rest_framework import status
+
 
 class GeminiContentAPI(APIView):
     def post(self, request):

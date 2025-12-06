@@ -1,4 +1,4 @@
-#This is a guide from GeminiAI and I have already validated the code below
+# This is a guide from GeminiAI and I have already validated the code below
 import google.generativeai as genai
 from django.conf import settings
 from GeminiAPI.models import OUELApp
@@ -6,6 +6,7 @@ from .normalize_field import normalize_field
 import json
 
 genai.configure(api_key=settings.GOOGLE_API_KEY)
+
 
 def GeminiGenerateContent(user_input, app_id):
     if not isinstance(user_input, str):
@@ -32,7 +33,6 @@ def GeminiGenerateContent(user_input, app_id):
         model = genai.GenerativeModel('gemini-2.5-flash')
         response = model.generate_content(full_prompt)
         result = response.text
-
 
         try:
             start = result.find("{")
